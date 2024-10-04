@@ -1,0 +1,640 @@
+/* Resetta i margini e il padding di tutti gli elementi */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Stile per la parte superiore della pagina */
+.parte-superiore {
+    width: 100%;
+    height: 80px;
+}
+
+/* Stile per il font Teko */
+.teko-font {
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Stile per il titolo principale */
+.titolo {
+    width: fit-content;
+    position: absolute;
+    left: 44%;
+    top: 3%;
+}
+
+/* Margine superiore per il titolo secondario */
+.titolo-3 {
+    margin-top: 15px;
+}
+
+/* Stili per le immagini degli esercizi */
+.petto,
+.bicipiti,
+.tricipiti,
+.avambracci,
+.spalle,
+.quadricipiti,
+.femorali,
+.polpacci,
+.glutei {
+    position: absolute;
+    top: 50%;
+    left: 50.9%;
+    transform: translate(-53%, -51%);
+    opacity: 0; /* Inizio invisibile */
+    animation: fadeIn 0.8s ease forwards, scaleUp 0.5s ease forwards; /* Animazioni di apparizione e ingrandimento */
+    transition: transform 0.3s ease; /* Transizione dolce per gli hover */
+}
+
+/* Animazione di apparizione */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Inizio invisibile */
+        transform: translate(-53%, -51%) scale(0.8); /* Inizia più piccolo */
+    }
+    100% {
+        opacity: 1; /* Diventa visibile */
+        transform: translate(-53%, -51%) scale(1); /* Fine posizione normale */
+    }
+}
+
+/* Animazione di ingrandimento */
+@keyframes scaleUp {
+    0% {
+        transform: translate(-53%, -51%) scale(1); /* Inizio normale */
+    }
+    100% {
+        transform: translate(-53%, -51%) scale(1.05); /* Fine ingrandito */
+    }
+}
+
+/* Aggiungi un effetto hover per l'interazione */
+.petto:hover,
+.bicipiti:hover,
+.tricipiti:hover,
+.avambracci:hover,
+.spalle:hover,
+.quadricipiti:hover,
+.femorali:hover,
+.polpacci:hover,
+.glutei:hover {
+    transform: translate(-53%, -51%) scale(1.1); /* Leggero ingrandimento al passaggio del mouse */
+    transition: transform 0.3s ease; /* Transizione dolce */
+}
+
+
+.petto { content: url('images/petto-OK.png'); }
+.bicipiti { content: url('images/bicipiti-OK.png'); }
+.tricipiti { content: url('images/tricipiti-OK.png'); }
+.avambracci { content: url('images/avambraccia-OK.png'); }
+.spalle { content: url('images/spalle-OK.png'); }
+.quadricipiti { content: url('images/quadri-OK.png'); }
+.femorali { content: url('images/femorali-OK.png'); }
+.polpacci { content: url('images/polpacci-OK.png'); }
+.glutei { content: url('images/glutei-OK.png'); }
+
+/* Stile per le liste */
+ul {
+    font-size: 40px;
+    width: fit-content;
+}
+
+li {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer; /* Cursore a forma di mano per indicare cliccabilità */
+    list-style: none; /* Rimuove i puntini delle liste */
+    margin-bottom: 20px; /* Spazio sotto l'elemento */
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500; /* Leggermente più spesso per maggiore leggibilità */
+    font-size: 1.5rem; /* Dimensione del font aumentata */
+    animation: fadeIn 0.3s; /* Animazione di fade */
+    border-radius: 15px; /* Angoli arrotondati per un look moderno */
+    transition: background-color 0.4s ease, border 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transizione dolce */
+    background-color: #f0f4f8; /* Colore di sfondo iniziale più chiaro */
+    color: #37474f; /* Colore del testo iniziale */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità, più leggera */
+    border: 2px solid transparent; /* Bordo trasparente per effetto hover */
+    padding: 12px 15px; /* Padding interno per migliorare l'aspetto */
+    opacity: 1; /* Mantieni la visibilità */
+    animation: fadeIn 0.5s forwards; /* Animazione di fade-in */
+    transform: translateY(0); /* Posizione originale */
+}
+
+li:nth-child(even) {
+    animation-delay: 0.1s; /* Ritardo per gli elementi pari */
+}
+
+li:nth-child(odd) {
+    animation-delay: 0.2s; /* Ritardo per gli elementi dispari */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Inizialmente invisibile */
+        transform: translateY(10px); /* Si sposta verso il basso */
+    }
+    100% {
+        opacity: 1; /* Visibile */
+        transform: translateY(0); /* Torna alla posizione originale */
+    }
+}
+
+li:hover {
+    background-color: #b2ebf2; /* Colore di sfondo al passaggio del mouse */
+    color: #004d40; /* Colore del testo al passaggio del mouse */
+    border: 2px solid #004d40; /* Bordo colorato al passaggio del mouse */
+    transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Ombra più intensa al passaggio del mouse */
+    transition: background-color 0.4s ease, border 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transizione dolce */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02); /* Ingrandimento al 2% */
+    }
+    100% {
+        transform: scale(1); /* Torna alla dimensione originale */
+    }
+}
+
+
+
+
+
+
+/* Contenitore per le immagini */
+.img-container {
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, -51%);
+}
+
+/* Stili per le parti superiori e inferiori */
+.parti-superiori,
+.parti-inferiori {
+    font-size: 25px;
+    width: 400px;
+}
+
+.parti-superiori {
+    margin-bottom: 20px;
+    border-top: 4px solid #3c3f41; /* Bordo superiore grigio scuro */
+    border-bottom: 4px solid #3c3f41; /* Bordo inferiore grigio scuro */
+    padding: 15px 20px; /* Maggiore spaziatura interna */
+    background-color: #f7f9fa; /* Sfondo grigio molto chiaro */
+    border-radius: 8px; /* Bordo arrotondato per un look moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transizione per l'ombra e la trasformazione */
+}
+
+.parti-superiori:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Ombra più intensa al passaggio del mouse */
+    transform: translateY(-2px); /* Leggero sollevamento al passaggio del mouse */
+}
+
+.parti-superiori h1 {
+    font-family: 'Arial', sans-serif; /* Font chiaro e leggibile */
+    font-size: 2rem; /* Dimensione del titolo */
+    color: #343a40; /* Colore scuro per il titolo */
+    margin: 0; /* Rimuovi margini di default */
+    text-align: center; /* Centro il titolo */
+    text-transform: uppercase; /* Testo in maiuscolo */
+    letter-spacing: 1.5px; /* Spaziatura tra le lettere per un aspetto più elegante */
+    padding: 10px 0; /* Padding superiore e inferiore per dare respiro al titolo */
+    background-color: #ffffff; /* Sfondo bianco per il titolo */
+    border-radius: 5px; /* Bordo arrotondato per il titolo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra leggera per il titolo */
+}
+
+.parti-inferiori {
+    margin-top: 15px; /* Margine superiore ridotto */
+    border-top: 3px solid #6c757d; /* Bordo superiore grigio medio */
+    border-bottom: 3px solid #6c757d; /* Bordo inferiore grigio medio */
+    padding: 10px 15px; /* Spaziatura interna ridotta */
+    background-color: #ffffff; /* Sfondo bianco per un aspetto pulito */
+    border-radius: 6px; /* Bordo arrotondato per un look moderno */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transizione per l'ombra e la trasformazione */
+}
+
+.parti-inferiori:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra più intensa al passaggio del mouse */
+    transform: translateY(-1px); /* Leggero sollevamento al passaggio del mouse */
+}
+
+.parti-inferiori h2 {
+    font-family: 'Arial', sans-serif; /* Font chiaro e leggibile */
+    font-size: 1.5rem; /* Dimensione del titolo inferiore ridotta */
+    color: #495057; /* Colore grigio scuro per il titolo */
+    margin: 0; /* Rimuovi margini di default */
+    text-align: center; /* Centro il titolo */
+    text-transform: uppercase; /* Testo in maiuscolo */
+    letter-spacing: 1.2px; /* Spaziatura tra le lettere ridotta */
+    padding: 5px 0; /* Padding superiore e inferiore ridotto */
+}
+
+.allenamenti {
+    margin-bottom: 20px;
+    border-top: 4px solid #3c3f41; /* Bordo superiore grigio scuro */
+    border-bottom: 4px solid #3c3f41; /* Bordo inferiore grigio scuro */
+    padding: 15px 20px; /* Maggiore spaziatura interna */
+    background-color: #f7f9fa; /* Sfondo grigio molto chiaro */
+    border-radius: 8px; /* Bordo arrotondato per un look moderno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transizione per l'ombra e la trasformazione */
+}
+
+.allenamenti:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Ombra più intensa al passaggio del mouse */
+    transform: translateY(-2px); /* Leggero sollevamento al passaggio del mouse */
+}
+
+.allenamenti h1 {
+    font-family: 'Arial', sans-serif; /* Font chiaro e leggibile */
+    font-size: 2rem; /* Dimensione del titolo */
+    color: #343a40; /* Colore scuro per il titolo */
+    margin: 0; /* Rimuovi margini di default */
+    text-align: center; /* Centro il titolo */
+    text-transform: uppercase; /* Testo in maiuscolo */
+    letter-spacing: 1.5px; /* Spaziatura tra le lettere per un aspetto più elegante */
+    padding: 10px 0; /* Padding superiore e inferiore per dare respiro al titolo */
+    background-color: #ffffff; /* Sfondo bianco per il titolo */
+    border-radius: 5px; /* Bordo arrotondato per il titolo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra leggera per il titolo */
+}
+
+
+
+
+/* Contenitore nascosto per gli esercizi */
+.contenitore-nascosto {
+    float: right;
+    display: none; /* Nascosto di default */
+    transition: 1s; /* Transizione dolce */
+    position: absolute;
+    top: 24%;
+    left: 60%;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0; /* Inizio invisibile */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1; /* Fine visibile */
+    }
+}
+
+@keyframes fadeRight {
+    0% {
+        transform: scale(0);
+        opacity: 0; /* Inizio invisibile */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1; /* Fine visibile */
+    }
+}
+
+@keyframes fadeCenter {
+    0% {
+        opacity: 0; /* Inizio invisibile */
+    }
+    100% {
+        opacity: 1; /* Fine visibile */
+    }
+}
+/* Animazione di fade out */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+/* Stili per i contenitori nascosti */
+.petto-nascosto,
+.bicipiti-nascosto,
+.tricipiti-nascosto {
+    float: left;
+    border-radius: 10px;
+    position: absolute;
+    border: 3px solid black; /* Bordo per il contenitore */
+    display: none; /* Nascosto di default */
+    animation: slideIn 0.5s ease forwards; /* Animazione di scorrimento */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
+}
+
+.petto-nascosto { left: 60%; top: 22%; } /* Posizione per il contenitore del petto */
+.bicipiti-nascosto { left: 60%; top: 25%; } /* Posizione per il contenitore dei bicipiti */
+.tricipiti-nascosto { left: 24%; top: 25%; } /* Posizione per il contenitore dei tricipiti */
+
+/* Stili per i titoli dei contenitori nascosti */
+.titolo-petto-n,
+.titolo-bicipiti-n,
+.titolo-tricipiti-n {
+    text-align: center; /* Allinea il testo al centro */
+    font-size: 28px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid; /* Bordo inferiore */
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease forwards; /* Animazione di apparizione */
+}
+
+/* Stile per gli esercizi nei contenitori nascosti */
+.esercizi-p-nascosto,
+.esercizi-bic-n {
+    font-size: 32px;
+    margin-left: 20px;
+    padding-right: 25px;
+}
+
+/* Animazioni */
+@keyframes slideIn {
+    0% {
+        transform: translateX(20px); /* Inizia leggermente a destra */
+        opacity: 0; /* Inizio invisibile */
+    }
+    100% {
+        transform: translateX(0); /* Torna alla posizione originale */
+        opacity: 1; /* Fine visibile */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Inizio invisibile */
+    }
+    100% {
+        opacity: 1; /* Fine visibile */
+    }
+}
+
+
+/* Pulsanti nei contenitori nascosti */
+
+.esercizi-tric-n {
+    font-size: 32px;
+    margin-left: 20px;
+    padding-right: 25px;
+    border-radius: 10px;
+}
+
+.esercizi-spalle-n {
+    font-size: 32px;
+    margin-left: 20px;
+    padding-right: 25px;
+    border-radius: 10px;
+}
+
+.spalle-nascosto {
+    float: left;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    border: 3px solid black;
+    display: none;
+    animation: fadeRight 0.5s ease 0s 1 normal forwards;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px grey;
+}
+
+.avambracci-nascosto {
+    float: left;
+    position: absolute;
+    left: 24%;
+    top: 40%;
+    border: 3px solid black;
+    display: none;
+    animation: fadeRight 0.5s ease 0s 1 normal forwards;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px grey;
+}
+
+.quadricipiti-nascosto {
+    float: left;
+    position: absolute;
+    left: 24%;
+    top: 50%;
+    border: 3px solid black;
+    display: none;
+    animation: fadeRight 0.5s ease 0s 1 normal forwards;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px grey;
+}
+
+.femorali-nascosto {
+    float: left;
+    position: absolute;
+    left: 58%;
+    top: 55%;
+    border: 3px solid black;
+    display: none;
+    animation: fadeIn 0.5s ease 0s 1 normal forwards;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px grey;
+}
+
+.polpacci-nascosto {
+    float: left;
+    position: absolute;
+    left: 58%;
+    top: 56%;
+    border: 3px solid black;
+    display: none;
+    animation: fadeIn 0.5s ease 0s 1 normal forwards;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px grey;
+}
+
+.glutei-nascosto {
+    float: left;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    border: 3px solid black;
+    display: none;
+    animation: fadeRight 0.5s ease 0s 1 normal forwards;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px grey;
+}
+
+.esercizi-ava-n,
+.esercizi-spalle-n,
+.esercizi-quadri-n,
+.esercizi-fem-n,
+.esercizi-polp-n {
+    font-size: 32px;
+    margin-left: 20px;
+    padding-right: 25px;
+}
+
+.esercizi-glutei-n {
+    font-size: 30px;
+    margin-left: 20px;
+    padding-right: 25px;
+}
+
+.titolo2 {
+    position: absolute;
+    top: 4%;
+}
+
+.schede {
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.allenamenti {
+    padding: 5px;
+    text-align: -webkit-center;
+}
+
+.titolo-schede {
+    
+}
+
+.titolo-tricipiti-n,
+.titolo-spalle-n,
+.titolo-ava-n,
+.titolo-quadri-n,
+.titolo-fem-n,
+.titolo-polp-n,
+.titolo-glutei-n {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid;
+}
+
+.titolo-schede {
+    text-align: right;
+}
+
+h1 {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+}
+
+.tracking {
+    float: right;
+}
+
+.titolo-tracking {
+    border-bottom: 3px solid black;
+    margin-bottom: 20px;
+}
+
+.giorni-settimana {
+    border: 2px solid black;
+    width: fit-content;
+    font-size: 21px;
+}
+
+h3 {
+    border-bottom: 1px solid black;
+}
+
+
+table {
+    width: 100%; /* Tabella a larghezza piena */
+    border-collapse: collapse; /* Rimuove gli spazi tra le celle */
+    border-radius: 6px; /* Angoli arrotondati per un aspetto moderno */
+    overflow: hidden; /* Nasconde i bordi arrotondati */
+    background-color: #ffffff; /* Colore di sfondo della tabella */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+    transition: box-shadow 0.3s ease; /* Transizione dolce per l'ombreggiatura */
+}
+
+th, td {
+    padding: 6px; /* Ridotto ulteriormente il padding interno per le celle */
+    text-align: center; /* Centra il testo */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transizione dolce per il colore di sfondo e la trasformazione */
+    font-size: 0.90rem; /* Ridotto il font per le celle */
+    min-width: 60px; /* Larghezza minima per evitare restringimenti */
+    height: 35px; /* Altezza fissa per le celle ridotta */
+}
+
+th {
+    background-color: #388e3c; /* Verde scuro per l'intestazione */
+    color: white; /* Testo bianco per contrasto */
+    font-size: 0.95rem; /* Dimensione del font per l'intestazione leggermente ridotta */
+    text-transform: uppercase; /* Testo maiuscolo */
+    letter-spacing: 0.5px; /* Spaziatura tra le lettere */
+}
+
+td {
+    color: #333; /* Colore del testo per le celle */
+    border-bottom: 1px solid #e0e0e0; /* Bordo inferiore grigio chiaro */
+    position: relative; /* Posizione relativa per le animazioni */
+}
+
+tr:nth-child(even) {
+    background-color: #f1f8e9; /* Colore di sfondo verde chiaro per le righe pari */
+    transition: background-color 0.3s ease; /* Transizione dolce per le righe pari */
+}
+
+tr:hover {
+    background-color: #b2ebf2; /* Colore di sfondo azzurro chiaro al passaggio del mouse */
+    transform: scale(1.02); /* Effetto di ingrandimento leggero */
+    transition: transform 0.2s ease; /* Transizione dolce per l'ingrandimento */
+}
+
+tr.done {
+    background-color: #81c784; /* Verde per le righe completate */
+    color: white; /* Testo bianco per il completamento */
+}
+
+button {
+    background-color: #2196f3; /* Colore blu per i pulsanti */
+    color: white; /* Testo bianco */
+    border: none; /* Rimuove il bordo */
+    padding: 4px 6px; /* Ridotto ulteriormente il padding interno per i pulsanti */
+    border-radius: 4px; /* Angoli arrotondati */
+    cursor: pointer; /* Cursore a forma di mano */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transizione dolce per i pulsanti */
+    font-size: 0.90rem; /* Dimensione del font per i pulsanti ridotta */
+    box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
+}
+
+button:hover {
+    background-color: #1976d2; /* Colore blu più scuro al passaggio del mouse */
+    transform: scale(1.05); /* Effetto di ingrandimento al passaggio del mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per effetto di profondità */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transizione dolce per il pulsante */
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem; /* Dimensione ridotta per schermi piccoli */
+    }
+
+    table {
+        width: 100%; /* Tabella a larghezza intera per schermi piccoli */
+    }
+
+    th, td {
+        font-size: 0.9rem; /* Dimensione del testo più piccola */
+    }
+}
